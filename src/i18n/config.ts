@@ -11,7 +11,9 @@ i18n
   .init({
     resources: {
       en: { translation: en },
-      de: { translation: de }
+      de: { translation: de },
+      it: { translation: it },
+      tlh: { translation: tlh },
     },
     fallbackLng: 'en',
     lng: 'en', // Set default language to English

@@ -1,0 +1,83 @@
+# Traduzione in Klingon
+klingon_translations = {
+    "common": {
+        "theme": "Doch",
+        "language": "Hol",
+        "dark": "Hurgh",
+        "light": "wov"
+    },
+    "header": {
+        "home": "juH",
+        "features": "chutmey",
+        "instructions": "ra'ghom"
+    },
+    "hero": {
+        "title": "Bitaxe Daqvo' Web lo'",
+        "description": "yItlhob, yIwIv Segh 'ej 'ay' 'ej lo'choH Hoch. nIS pagh luch.",
+        "getStarted": "ghItlhchoH",
+        "connect": "chel",
+        "disconnect": "teq",
+        "selectDevice": "jan yIwIv",
+        "selectBoard": "janHom 'ay' yIwIv",
+        "selectFirmware": "ngoq Segh yIwIv",
+        "startFlashing": "ghItlhchoH",
+        "flashing": "ghItlhqa'...",
+        "startLogging": "De' ghItlhchoH",
+        "stopLogging": "De' ghoSchoH",
+        "downloadLogs": "De' nIH",
+        "loggingDescription": "chel jan, ghItlh De', nIH 'ach neH le'vaD."
+    },
+    "features": {
+        "title": "nIvmo' chutmey",
+        "fastFlashing": {
+            "title": "tugh ghItlhqa'",
+            "description": "Bitaxe yItlhqa' 'ej poH puS."
+        },
+        "webBased": {
+            "title": "Web lo'",
+            "description": "lutlh luch nISbe'. tlhogh lo'."
+        },
+        "multipleBoards": {
+            "title": "janHom law'",
+            "description": "Bitaxe janHom law' qutlh."
+        }
+    },
+    "instructions": {
+        "title": "chay' lo'",
+        "steps": {
+            "1": "jan Bitaxe yIchel ghap De'wI'.",
+            "2": "\"chel jan\" yI'uy' 'ej lutlh popUp pong yIwIv.",
+            "3": "jan Segh yIwIv 'ej ghoch.",
+            "4": "janHom 'ay' Segh yIwIv.",
+            "5": "\"ghItlhchoH\" yI'uy'.",
+            "6": "ghItlhqa' rIn lo'laHghach.",
+            "7": "teq 'ej qet jan."
+        },
+        "moreInfo": "nIteb je SughwI' ghojwI'",
+        "documentation": "De'"
+    },
+    "status": {
+        "connecting": "chel jan...",
+        "connected": "chelqa'chu'!",
+        "selectBoth": "jan Segh 'ej janHom 'ay' yIwIv",
+        "connectFirst": "jan chelpa' Datu'",
+        "preparing": "ghItlhqa' tugh...",
+        "flashing": "ghItlhqa': {{percent}}% rIn",
+        "completed": "ghItlhqa' rIn. jan taghqa'...",
+        "success": "ghItlhqa' chu'! jan taghqa'.",
+        "loggingStarted": "De' ghItlhqa'..."
+    },
+    "errors": {
+        "browserCompatibility": {
+            "title": "ngeb browser ngoD",
+            "description": "Qo' browser tlhogh Ha'DIbaHpu' 'ej chuqmey (Hoch Google Chrome, Microsoft Edge, Brave) lo'. tlhogh tlhogh ghItlhqa' bIra'."
+        }
+    }
+}
+
+# Salvataggio del file tradotto in Klingon
+klingon_file_path = '/mnt/data/tlh.json'
+with open(klingon_file_path, 'w', encoding='utf-8') as f:
+    json.dump(klingon_translations, f, ensure_ascii=False, indent=2)
+
+klingon_file_path
