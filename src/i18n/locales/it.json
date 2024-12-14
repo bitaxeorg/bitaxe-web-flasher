@@ -1,13 +1,4 @@
-import json
-
-# Traduzione italiana del file JSON
-file_path = '/mnt/data/en.json'
-
-with open(file_path, 'r', encoding='utf-8') as f:
-    data = json.load(f)
-
-# Traduzione in italiano
-translations = {
+{
     "common": {
         "theme": "Tema",
         "language": "Lingua",
@@ -82,10 +73,3 @@ translations = {
         }
     }
 }
-
-# Salvataggio del file tradotto
-output_path = '/mnt/data/it.json'
-with open(output_path, 'w', encoding='utf-8') as f:
-    json.dump(translations, f, ensure_ascii=False, indent=2)
-
-output_path

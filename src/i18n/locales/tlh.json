@@ -1,5 +1,4 @@
-# Traduzione in Klingon
-klingon_translations = {
+{
     "common": {
         "theme": "Doch",
         "language": "Hol",
@@ -74,10 +73,3 @@ klingon_translations = {
         }
     }
 }
-
-# Salvataggio del file tradotto in Klingon
-klingon_file_path = '/mnt/data/tlh.json'
-with open(klingon_file_path, 'w', encoding='utf-8') as f:
-    json.dump(klingon_translations, f, ensure_ascii=False, indent=2)
-
-klingon_file_path
