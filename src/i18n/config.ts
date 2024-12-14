@@ -12,7 +12,7 @@ i18n
     resources: {
       en: { translation: en },
       de: { translation: de },
-	  pt: { translation: pt }
+      pt: { translation: pt }
     },
     fallbackLng: 'en',
     lng: 'en', // Set default language to English
