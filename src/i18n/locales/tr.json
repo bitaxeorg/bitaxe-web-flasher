@@ -11,7 +11,7 @@
       "instructions": "Kullanım"
     },
     "hero": {
-      "title": "Bitaxe Cihanızı Tarayıcınızdan Formatlayın",
+      "title": "Bitaxe Cihazınızı Tarayıcınızdan Formatlayın",
       "description": "Cihazını bağla, model ve versiyon seç ve formatlamaya hemen başla. Bilgisayara ek kurulum gerektirmez.",
       "getStarted": "Başlayın",
       "connect": "Bağla",
@@ -24,7 +24,7 @@
       "startLogging": "Loglamaya Başla",
       "stopLogging": "Loglamayı Durdur",
       "downloadLogs": "Logu İndir",
-      "loggingDescription": "Cihazınızı seçin, seri verisini loglayın ve daha sonra indirin."
+      "loggingDescription": "Cihazınızı seçin, işlemi loglayın ve daha sonra indirin."
     },
     "features": {
       "title": "Öne Çıkan Özellikler",
@@ -46,8 +46,8 @@
       "steps": {
         "1": "Bitaxe cihazınızı bilgisayarınıza bağlayın.",
         "2": "\"Bağla\" butonuna tıklayın ve çıkan menüden Bitaxe cihazınızı seçin.",
-        "3": "Cihaz modelinizi seçin.",
-        "4": "Cihaz versiyonunuzu seçin.",
+        "3": "Cihaz modelini seçin.",
+        "4": "Cihaz versiyonunu seçin.",
         "5": "Formatı başlatmak için \"Formatlamaya Başla\" butonuna tıklayın.",
         "6": "Formatlama işleminin tamamlanmasını bekleyin.",
         "7": "Bağlantıyı kesin ve cihazınızı baştan başlatın."
@@ -58,13 +58,13 @@
     "status": {
       "connecting": "Cihazınız bağlanıyor...",
       "connected": "Bağlantı başarılı!",
-      "selectBoth": "LÜtfen cihaz modeli ve versiyonunu seçin",
+      "selectBoth": "Lütfen cihaz modeli ve versiyonunu seçin",
       "connectFirst": "Lütfen önce cihazınızı bağlayın",
       "preparing": "Formatlamaya hazırlanıyor...",
       "flashing": "Formatlanıyor: {{percent}}% tamamlandı",
       "completed": "Formatlama tamamlandı. Cihaz baştan başlatılıyor...",
-      "success": "Formatlama başarıyla tamamlandı! Cİhaz baştan başlatıldı.",
-      "loggingStarted": "Seri loglama başlatıldı..."
+      "success": "Formatlama başarıyla tamamlandı! Cihaz baştan başlatıldı.",
+      "loggingStarted": "Loglama başlatıldı..."
     },
     "errors": {
       "browserCompatibility": {
