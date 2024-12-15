@@ -8,7 +8,6 @@ const LanguageSelector = () => {
     { value: 'en', label: 'English' },
     { value: 'de', label: 'Deutsch' },
     { value: 'pt', label: 'Portuguese' },
-    { value: 'ru', label: 'Русский' }
   ];
 
   const handleLanguageChange = (value: string) => {
