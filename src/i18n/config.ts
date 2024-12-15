@@ -5,6 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import en from './locales/en.json';
 import de from './locales/de.json';
 import pt from './locales/pt.json';
+import pt from './locales/ru.json';
 
 i18n
   .use(LanguageDetector)
@@ -13,7 +14,8 @@ i18n
     resources: {
       en: { translation: en },
       de: { translation: de },
-      pt: { translation: pt }
+      pt: { translation: pt },
+      ru: { translation: ru }
     },
     fallbackLng: 'en',
     lng: 'en', // Set default language to English
