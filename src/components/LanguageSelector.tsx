@@ -9,18 +9,26 @@ const LanguageSelector = () => {
     { value: 'de', label: 'Deutsch' },
     { value: 'it', label: 'Italiano' },
     { value: 'tlh', label: 'Klingon' }
+    { value: 'pt', label: 'Portuguese' },
+    { value: 'ru', label: 'Русский' }
   ];
 
   const handleLanguageChange = (value: string) => {
     i18n.changeLanguage(value);
   };
 
+  const getCurrentLanguageLabel = () => {
+    return languages.find(lang => lang.value === i18n.language)?.label || i18n.language;
+  };
+
   return (
     <div className="flex items-center gap-2">
       <span className="text-sm">{t('common.language')}:</span>
       <Select value={i18n.language} onValueChange={handleLanguageChange}>
-        <SelectTrigger className="w-24">
-          <SelectValue />
+        <SelectTrigger className="w-28">
+          <SelectValue placeholder={getCurrentLanguageLabel()}>
+            {getCurrentLanguageLabel()}
+          </SelectValue>
         </SelectTrigger>
         <SelectContent>
           {languages.map((lang) => (
