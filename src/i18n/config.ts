@@ -6,6 +6,7 @@ import en from './locales/en.json';
 import de from './locales/de.json';
 import pt from './locales/pt.json';
 import ru from './locales/ru.json';
+import sk from './locales/sk.json';
 
 i18n
   .use(LanguageDetector)
@@ -15,7 +16,8 @@ i18n
       en: { translation: en },
       de: { translation: de },
       pt: { translation: pt },
-      ru: { translation: ru }
+      ru: { translation: ru },
+      sk: { translation: sk }
     },
     fallbackLng: 'en',
     lng: 'en', // Set default language to English
