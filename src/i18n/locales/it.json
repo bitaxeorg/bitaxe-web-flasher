@@ -1,0 +1,75 @@
+{
+    "common": {
+        "theme": "Tema",
+        "language": "Lingua",
+        "dark": "Scuro",
+        "light": "Chiaro"
+    },
+    "header": {
+        "home": "Home",
+        "features": "Caratteristiche",
+        "instructions": "Istruzioni"
+    },
+    "hero": {
+        "title": "Flasha il tuo Bitaxe direttamente dal Web",
+        "description": "Collega il tuo dispositivo, seleziona il modello e la versione della scheda e inizia subito il flashing. Nessuna configurazione richiesta.",
+        "getStarted": "Inizia",
+        "connect": "Connetti",
+        "disconnect": "Disconnetti",
+        "selectDevice": "Seleziona dispositivo",
+        "selectBoard": "Seleziona versione scheda",
+        "selectFirmware": "Seleziona versione firmware",
+        "startFlashing": "Inizia flashing",
+        "flashing": "Flash in corso...",
+        "startLogging": "Avvia registrazione Log",
+        "stopLogging": "Ferma registrazione Log",
+        "downloadLogs": "Scarica Log",
+        "loggingDescription": "Collega il tuo dispositivo, registra i dati seriali e scaricali successivamente."
+    },
+    "features": {
+        "title": "Caratteristiche principali",
+        "fastFlashing": {
+            "title": "Flash rapido",
+            "description": "Flasha il tuo Bitaxe in pochi secondi, non minuti."
+        },
+        "webBased": {
+            "title": "Basato sul Web",
+            "description": "Non necessario alcun software speciale. Usa il tuo browser."
+        },
+        "multipleBoards": {
+            "title": "Schede multiple",
+            "description": "Supporto per varie schede e moduli Bitaxe."
+        }
+    },
+    "instructions": {
+        "title": "Come utilizzare",
+        "steps": {
+            "1": "Collega il tuo Bitaxe al computer.",
+            "2": "Clicca su \"Connetti dispositivo\" e seleziona il tuo dispositivo dal popup.",
+            "3": "Seleziona il modello del dispositivo dal menu a discesa.",
+            "4": "Scegli la versione appropriata della scheda.",
+            "5": "Clicca su \"Inizia flashing\" per avviare il processo.",
+            "6": "Attendi il completamento del processo di flashing.",
+            "7": "Disconnetti e resetta il tuo dispositivo."
+        },
+        "moreInfo": "Per istruzioni pi dettagliate, consulta la nostra",
+        "documentation": "documentazione"
+    },
+    "status": {
+        "connecting": "Connessione al dispositivo in corso...",
+        "connected": "Connesso con successo!",
+        "selectBoth": "Seleziona sia il modello del dispositivo che la versione della scheda",
+        "connectFirst": "Collegati prima a un dispositivo",
+        "preparing": "Preparazione per il flashing in corso...",
+        "flashing": "Flashing: {{percent}}% completato",
+        "completed": "Flashing completato. Riavvio del dispositivo...",
+        "success": "Flashing completato con successo! Il dispositivo stato riavviato.",
+        "loggingStarted": "Registrazione seriale avviata..."
+    },
+    "errors": {
+        "browserCompatibility": {
+            "title": "Errore di compatibilit del browser",
+            "description": "Questa applicazione richiede un browser basato su Chromium (come Google Chrome, Microsoft Edge o Brave) per funzionare correttamente. Passa a un browser compatibile e riprova."
+        }
+    }
+}

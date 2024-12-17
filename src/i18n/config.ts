@@ -7,6 +7,8 @@ import de from './locales/de.json';
 import pt from './locales/pt.json';
 import ru from './locales/ru.json';
 import sk from './locales/sk.json';
+import it from './locales/it.json';
+import tlh from './locales/tlh.json';
 
 i18n
   .use(LanguageDetector)
@@ -15,6 +17,8 @@ i18n
     resources: {
       en: { translation: en },
       de: { translation: de },
+      it: { translation: it },
+      tlh: { translation: tlh },
       pt: { translation: pt },
       ru: { translation: ru },
       sk: { translation: sk }
