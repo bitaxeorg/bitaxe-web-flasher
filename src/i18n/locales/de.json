@@ -12,7 +12,7 @@
     },
     "hero": {
       "title": "Direkt aus dem Browser dein Bitaxe flashen",
-      "description": "Verbinden dein Bitaxe, wählen dein Modell und die Board-Version aus und beginne sofort mit dem Flashen. Keine Installation erforderlich.",
+      "description": "Verbinde deinen Bitaxe, wählen dein Modell und die Board-Version aus und beginne sofort mit dem Flashen. Keine Installation erforderlich.",
       "getStarted": "Anleitung",
       "connect": "Verbinden",
       "disconnect": "Trennen",
@@ -30,11 +30,11 @@
       "title": "Funktionen",
       "fastFlashing": {
         "title": "Schnelles Flashen",
-        "description": "Flashen deinen Bitaxe in Sekunden, nicht in Minuten."
+        "description": "Flashe deinen Bitaxe in Sekunden, nicht in Minuten."
       },
       "webBased": {
         "title": "Webbasiert",
-        "description": "Keine spezielle Software erforderlich. Nutzen deinen Webbrowser."
+        "description": "Keine spezielle Software erforderlich. Nutze deinen Webbrowser."
       },
       "multipleBoards": {
         "title": "Mehrere Boards",
@@ -44,15 +44,15 @@
     "instructions": {
       "title": "Anleitung",
       "steps": {
-        "1": "Verbinden dein Gerät mit dem Computer.",
-        "2": "Klicke auf \"Verbinden\" und wählen dein Gerät aus dem Popup.",
-        "3": "Wählen dein Gerätemodell aus dem Dropdown-Menü.",
+        "1": "Verbinde dein Bitaxe mit dem Computer.",
+        "2": "Klicke auf \"Verbinden\" und wähle dein Gerät aus dem Popup.",
+        "3": "Wähle dein Gerätemodell aus dem Dropdown-Menü.",
         "4": "Wähle die entsprechende Board-Version.",
         "5": "Klicke auf \"Flashen starten\", um den Vorgang zu beginnen.",
         "6": "Warte, bis der Flashvorgang abgeschlossen ist.",
-        "7": "Trennen und starten dein Gerät neu."
+        "7": "Trenne und starte dein Gerät neu."
       },
-      "moreInfo": "Für detailliertere Anweisungen besuchen bitte unsere",
+      "moreInfo": "Für detailliertere Anweisungen besuche bitte unsere",
       "documentation": "Dokumentation"
     },
     "status": {
