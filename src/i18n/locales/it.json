@@ -34,7 +34,7 @@
         },
         "webBased": {
             "title": "Basato sul Web",
-            "description": "Non � necessario alcun software speciale. Usa il tuo browser."
+            "description": "Non necessario alcun software speciale. Usa il tuo browser."
         },
         "multipleBoards": {
             "title": "Schede multiple",
@@ -52,7 +52,7 @@
             "6": "Attendi il completamento del processo di flashing.",
             "7": "Disconnetti e resetta il tuo dispositivo."
         },
-        "moreInfo": "Per istruzioni pi� dettagliate, consulta la nostra",
+        "moreInfo": "Per istruzioni pi dettagliate, consulta la nostra",
         "documentation": "documentazione"
     },
     "status": {
@@ -63,12 +63,12 @@
         "preparing": "Preparazione per il flashing in corso...",
         "flashing": "Flashing: {{percent}}% completato",
         "completed": "Flashing completato. Riavvio del dispositivo...",
-        "success": "Flashing completato con successo! Il dispositivo � stato riavviato.",
+        "success": "Flashing completato con successo! Il dispositivo stato riavviato.",
         "loggingStarted": "Registrazione seriale avviata..."
     },
     "errors": {
         "browserCompatibility": {
-            "title": "Errore di compatibilit� del browser",
+            "title": "Errore di compatibilit del browser",
             "description": "Questa applicazione richiede un browser basato su Chromium (come Google Chrome, Microsoft Edge o Brave) per funzionare correttamente. Passa a un browser compatibile e riprova."
         }
     }
