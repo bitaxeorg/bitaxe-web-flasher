@@ -6,6 +6,7 @@ import en from './locales/en.json';
 import de from './locales/de.json';
 import pt from './locales/pt.json';
 import ru from './locales/ru.json';
+import sk from './locales/tr.json';
 import sk from './locales/sk.json';
 import it from './locales/it.json';
 import tlh from './locales/tlh.json';
@@ -21,6 +22,7 @@ i18n
       tlh: { translation: tlh },
       pt: { translation: pt },
       ru: { translation: ru },
+      tr: { translation: tr },
       sk: { translation: sk }
     },
     fallbackLng: 'en',
