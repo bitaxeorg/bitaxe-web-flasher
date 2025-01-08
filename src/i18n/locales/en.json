@@ -62,7 +62,7 @@
       "connectFirst": "Please connect to a device first",
       "preparing": "Preparing to flash...",
       "flashing": "Flashing: {{percent}}% complete",
-      "completed": "Flashing completed. Restarting device...",
+      "completed": "Flashing completed. Restarting device, please wait...",
       "success": "Flashing completed successfully! Device has been restarted.",
       "loggingStarted": "Serial logging started..."
     },

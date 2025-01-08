@@ -231,10 +231,10 @@ export default function LandingHero() {
         terminal: {
           clean() { },
           writeLine(data: string) {
-            setStatus(data);
+            // setStatus(data);
           },
           write(data: string) {
-            setStatus(data);
+            // setStatus(data);
           },
         },
       });
@@ -267,7 +267,12 @@ export default function LandingHero() {
         eraseAll: false,
         compress: true,
         reportProgress: (fileIndex, written, total) => {
-          setStatus(t('status.flashing', { percent: Math.round((written / total) * 100) }))
+          const percent = Math.round((written / total) * 100)
+          if (percent == 100) {
+            setStatus(t('status.completed'))
+          } else {
+            setStatus(t('status.flashing', { percent: percent }))
+          }
         },
         calculateMD5Hash: () => '',
       })
