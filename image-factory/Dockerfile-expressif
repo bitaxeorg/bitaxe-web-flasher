@@ -1,4 +1,4 @@
-ARG IDF_VERSION
+ARG IDF_VERSION=v5.4
 FROM espressif/idf:${IDF_VERSION}
 
 RUN apt-get update && apt-get install -y \
