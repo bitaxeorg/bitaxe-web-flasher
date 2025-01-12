@@ -45,6 +45,10 @@ if [ $flash_only -eq 0 ]; then
         -f image-factory/Dockerfile-expressif .
     
     docker run --rm -v $ESP_MINER_PATH:/project -w /project esp-miner-factory idf.py build
+    if [ $? -ne 0 ]; then
+        echo "IDF build failed, check the logs for more information"
+        exit 1
+    fi
 
     if [ -z "$board" ]; then
         boards="102 201 202 203 204 205 401 402 403 601"
