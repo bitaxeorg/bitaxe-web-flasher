@@ -10,6 +10,7 @@ import tr from './locales/tr.json';
 import sk from './locales/sk.json';
 import it from './locales/it.json';
 import tlh from './locales/tlh.json';
+import ro from './locales/ro.json';
 
 i18n
   .use(LanguageDetector)
@@ -23,7 +24,8 @@ i18n
       pt: { translation: pt },
       ru: { translation: ru },
       tr: { translation: tr },
-      sk: { translation: sk }
+      sk: { translation: sk },
+      ro: { translation: ro }
     },
     fallbackLng: 'en',
     lng: 'en', // Set default language to English

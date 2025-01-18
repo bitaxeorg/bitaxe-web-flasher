@@ -12,7 +12,8 @@ const LanguageSelector = () => {
     { value: 'pt', label: 'Portuguese' },
     { value: 'ru', label: 'Русский' },
     { value: 'tr', label: 'Türkçe' },
-    { value: 'sk', label: 'Slovenský' }
+    { value: 'sk', label: 'Slovenský' },
+    { value: 'ro', label: 'Română' }
   ];
 
   const handleLanguageChange = (value: string) => {

@@ -1,0 +1,75 @@
+{
+    "common": {
+      "theme": "Temă",
+      "language": "Limbă",
+      "dark": "Întunecat",
+      "light": "Luminos"
+    },
+    "header": {
+      "home": "Acasă",
+      "features": "Funcții",
+      "instructions": "Instrucțiuni"
+    },
+    "hero": {
+      "title": "Programează dispozitivul tău Bitaxe direct de pe Internet",
+      "description": "Conectează dispozitivul, selectează modelul și versiunea plăcii și pornește programarea imediat. Nu este necesară instalare.",
+      "getStarted": "Pornește",
+      "connect": "Conectează",
+      "disconnect": "Deconecteză",
+      "selectDevice": "Selectează dispozitiv",
+      "selectBoard": "Selectează versiunea plăcii",
+      "selectFirmware": "Selectează versiunea software",
+      "startFlashing": "Începe programarea",
+      "flashing": "Programează...",
+      "startLogging": "Pornește logarea",
+      "stopLogging": "Oprește logarea",
+      "downloadLogs": "Descarcă loguri",
+      "loggingDescription": "Conectează aparatul, înregistrează datele de pe comunicarea serială și descarcă mai târziu."
+    },
+    "features": {
+      "title": "Funcții importante",
+      "fastFlashing": {
+        "title": "Programare rapidă",
+        "description": "Încarcă software pe Bitaxe în secunde, nu minute."
+      },
+      "webBased": {
+        "title": "Bazat pe web",
+        "description": "Fără nevoie de software special. Folosește browserul."
+      },
+      "multipleBoards": {
+        "title": "Plăci multiple",
+        "description": "Suport pentru mai multe plăci și module Bitaxe."
+      }
+    },
+    "instructions": {
+      "title": "Instrucțiuni",
+      "steps": {
+        "1": "Conectează Bitaxe-ul tău la calculator.",
+        "2": "Apasă pe \"Conectare Dispozitiv\" și selectează dispozitivul tău din popup.",
+        "3": "Selectează modelul dispozitivului tău din meniul dropdown.",
+        "4": "Alege versiunea potrivită a plăcii.",
+        "5": "Apasă pe \"Începe Programarea\" pentru a începe procesul.",
+        "6": "Așteaptă ca procesul de programare să se finalizeze.",
+        "7": "Deconectează și resetează dispozitivul tău."
+      },
+      "moreInfo": "Pentru instrucțiuni mai detaliate, te rugăm să consulți",
+      "documentation": "documentația"
+    },
+    "status": {
+      "connecting": "Se conectează la dispozitiv...",
+      "connected": "Conectat cu succes!",
+      "selectBoth": "Te rugăm să selectezi atât modelul dispozitivului cât și versiunea plăcii",
+      "connectFirst": "Te rugăm să te conectezi mai întâi la un dispozitiv",
+      "preparing": "Se pregătește programarea...",
+      "flashing": "Programare: {{percent}}% completat",
+      "completed": "Programare finalizată. Se repornește dispozitivul, te rugăm să aștepți...",
+      "success": "Programare finalizată cu succes! Dispozitivul a fost repornit.",
+      "loggingStarted": "Înregistrarea serială a început..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "Eroare de Compatibilitate Browser",
+        "description": "Această aplicație necesită un browser bazat pe Chromium (precum Google Chrome, Microsoft Edge, sau Brave) pentru a funcționa corect. Te rugăm să treci la un browser compatibil și să încerci din nou."
+      }
+    }
+  }
