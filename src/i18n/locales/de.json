@@ -24,7 +24,8 @@
       "startLogging": "Logging starten",
       "stopLogging": "Logging stoppen",
       "downloadLogs": "Logs herunterladen",
-      "loggingDescription": "Verbinde dein Gerät, protokolliere die seriellen Daten und lade diese später herunter."
+      "loggingDescription": "Verbinde dein Gerät, protokolliere die seriellen Daten und lade diese später herunter.",
+      "keepConfig": "Konfiguration behalten"
     },
     "features": {
       "title": "Funktionen",

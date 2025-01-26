@@ -24,7 +24,8 @@
       "startLogging": "Iniciar Log",
       "stopLogging": "Parar Log",
       "downloadLogs": "Baixar Logs",
-      "loggingDescription": "Conecte seu dispositivo, registre os dados seriais e baixe-os posteriormente."
+      "loggingDescription": "Conecte seu dispositivo, registre os dados seriais e baixe-os posteriormente.",
+      "keepConfig": "Manter configuração"
     },
     "features": {
       "title": "Principais Recursos",

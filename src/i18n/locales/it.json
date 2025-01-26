@@ -24,7 +24,8 @@
         "startLogging": "Avvia registrazione Log",
         "stopLogging": "Ferma registrazione Log",
         "downloadLogs": "Scarica Log",
-        "loggingDescription": "Collega il tuo dispositivo, registra i dati seriali e scaricali successivamente."
+        "loggingDescription": "Collega il tuo dispositivo, registra i dati seriali e scaricali successivamente.",
+        "keepConfig": "Mantieni configurazione"
     },
     "features": {
         "title": "Caratteristiche principali",

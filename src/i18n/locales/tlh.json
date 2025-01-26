@@ -24,7 +24,8 @@
         "startLogging": "De' ghItlhchoH",
         "stopLogging": "De' ghoSchoH",
         "downloadLogs": "De' nIH",
-        "loggingDescription": "chel jan, ghItlh De', nIH 'ach neH le'vaD."
+        "loggingDescription": "chel jan, ghItlh De', nIH 'ach neH le'vaD.",
+        "keepConfig": "nugh rI' choq"
     },
     "features": {
         "title": "nIvmo' chutmey",

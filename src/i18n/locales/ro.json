@@ -24,7 +24,8 @@
       "startLogging": "Pornește logarea",
       "stopLogging": "Oprește logarea",
       "downloadLogs": "Descarcă loguri",
-      "loggingDescription": "Conectează aparatul, înregistrează datele de pe comunicarea serială și descarcă mai târziu."
+      "loggingDescription": "Conectează aparatul, înregistrează datele de pe comunicarea serială și descarcă mai târziu.",
+      "keepConfig": "Păstrează configurația"
     },
     "features": {
       "title": "Funcții importante",

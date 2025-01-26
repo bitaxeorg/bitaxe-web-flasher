@@ -24,7 +24,8 @@
       "startLogging": "Start Logging",
       "stopLogging": "Stop Logging",
       "downloadLogs": "Download Logs",
-      "loggingDescription": "Connect your device, log the serial data and download it later on."
+      "loggingDescription": "Connect your device, log the serial data and download it later on.",
+      "keepConfig": "Keep configuration"
     },
     "features": {
       "title": "Key Features",

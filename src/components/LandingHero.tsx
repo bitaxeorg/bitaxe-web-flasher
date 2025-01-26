@@ -32,6 +32,7 @@ export default function LandingHero() {
   const textDecoderRef = useRef<TextDecoderStream | null>(null)
   const readableStreamClosedRef = useRef<Promise<void> | null>(null)
   const logsRef = useRef<string>('')
+  const [keepConfig, setKeepConfig] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
@@ -115,6 +116,10 @@ export default function LandingHero() {
       setStatus(`${t('status.disconnectError')}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
+
+  const handleKeepConfigToggle = (event) => {
+    setKeepConfig(event.target.checked);
+  };
 
   const startSerialLogging = async () => {
     if (!serialPortRef.current) {
@@ -256,6 +261,32 @@ export default function LandingHero() {
 
       setStatus(t('status.flashing', { percent: 0 }))
 
+      // On all Bitaxe derivatives the same
+      const nvsStart = 0x9000;
+      const nvsSize = 0x6000;
+
+      let parts;
+
+      if (keepConfig) {
+        parts = [
+          {
+            data: firmwareBinaryString.slice(0, nvsStart), // Data before NVS
+            address: 0,
+          },
+          {
+            data: firmwareBinaryString.slice(nvsStart + nvsSize), // Data after NVS
+            address: nvsStart + nvsSize,
+          },
+        ];
+      } else {
+        parts = [
+          {
+            data: firmwareBinaryString, // Entire firmware binary
+            address: 0,
+          },
+        ];
+      }
+
       await loader.writeFlash({
         fileArray: [{
           data: firmwareBinaryString,
@@ -354,6 +385,18 @@ export default function LandingHero() {
                   disabled={isConnecting || isFlashing}
                 />
               )}
+              <div className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  id="keepConfig"
+                  className="cursor-pointer"
+                  checked={keepConfig}
+                  onChange={handleKeepConfigToggle}
+                />
+                <label htmlFor="keepConfig" className="text-gray-500 dark:text-gray-400 cursor-pointer">
+                  {t('hero.keepConfig')}
+                </label>
+              </div>
               <Button
                 className="w-full"
                 onClick={handleStartFlashing}
