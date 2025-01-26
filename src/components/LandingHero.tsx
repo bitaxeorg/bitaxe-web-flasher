@@ -8,13 +8,15 @@ import { useTranslation } from 'react-i18next'
 import Header from './Header'
 import InstructionPanel from './InstructionPanel'
 import Selector from './Selector'
-import device_data from './firmware_data.json'
+import { FirmwareData } from '../lib/types'
+import firmware_data from './firmware_data.json'
 
 import { Terminal } from '@xterm/xterm';
 import '@xterm/xterm/css/xterm.css';
 
 export default function LandingHero() {
   const { t } = useTranslation();
+  const [device_data, setDeviceData] = useState<FirmwareData>(firmware_data)
   const [selectedDevice, setSelectedDevice] = useState<string>('')
   const [selectedBoardVersion, setSelectedBoardVersion] = useState('')
   const [selectedFirmware, setSelectedFirmware] = useState('')
@@ -37,6 +39,34 @@ export default function LandingHero() {
     const userAgent = navigator.userAgent.toLowerCase();
     const isChromium = /chrome|chromium|crios|edge/i.test(userAgent);
     setIsChromiumBased(isChromium);
+
+    // Released firmware data
+    const firmwareData = firmware_data
+    
+    // Append the local built firmware if available
+    fetch('/firmware_local/firmware_data.csv')
+      .then((response) => {
+        if (response.ok) {
+          response.text().then(data => {
+            const lines = data.split('\n');
+            lines.map(line => {
+              const [device, board, version, path] = line.split(',');
+
+              const firmwareDevice = firmwareData.devices.find(d => d.name == device);
+              if (!firmwareDevice) return;
+              
+              const firmwareBoard = firmwareDevice.boards.find(b => b.name == board);
+              if (!firmwareBoard) return;
+              
+              const existingFirmware = firmwareBoard.supported_firmware.find(f => f.version === version);
+              if (existingFirmware) return;
+              
+              firmwareBoard.supported_firmware.push({ version, path });
+            });
+            setDeviceData(firmwareData)
+          })
+        }
+      })
   }, []);
 
   useEffect(() => {
