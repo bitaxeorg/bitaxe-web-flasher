@@ -117,7 +117,7 @@ export default function LandingHero() {
     }
   }
 
-  const handleKeepConfigToggle = (event) => {
+  const handleKeepConfigToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setKeepConfig(event.target.checked);
   };
 
