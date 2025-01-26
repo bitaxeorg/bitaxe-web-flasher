@@ -24,7 +24,8 @@
       "startLogging": "Loglamaya Başla",
       "stopLogging": "Loglamayı Durdur",
       "downloadLogs": "Logu İndir",
-      "loggingDescription": "Cihazınızı seçin, işlemi loglayın ve daha sonra indirin."
+      "loggingDescription": "Cihazınızı seçin, işlemi loglayın ve daha sonra indirin.",
+      "keepConfig": "Yapılandırmayı koru"
     },
     "features": {
       "title": "Öne Çıkan Özellikler",

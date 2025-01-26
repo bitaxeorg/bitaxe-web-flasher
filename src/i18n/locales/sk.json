@@ -24,7 +24,8 @@
       "startLogging": "Spustiť Logovanie",
       "stopLogging": "Ukončiť Logovanie",
       "downloadLogs": "Stiahniť Logy",
-      "loggingDescription": "Pripojte Vaše zariadenie, uložte serialové dáta a stiahnite ich neskôr."
+      "loggingDescription": "Pripojte Vaše zariadenie, uložte serialové dáta a stiahnite ich neskôr.",
+      "keepConfig": "Zachovať konfiguráciu"
     },
     "features": {
       "title": "Kľučové Funkcie",
