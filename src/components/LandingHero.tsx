@@ -32,7 +32,7 @@ export default function LandingHero() {
   const textDecoderRef = useRef<TextDecoderStream | null>(null)
   const readableStreamClosedRef = useRef<Promise<void> | null>(null)
   const logsRef = useRef<string>('')
-  const [keepConfig, setKeepConfig] = useState(true);
+  const [keepConfig, setKeepConfig] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
