@@ -288,10 +288,7 @@ export default function LandingHero() {
       }
 
       await loader.writeFlash({
-        fileArray: [{
-          data: firmwareBinaryString,
-          address: 0
-        }],
+        fileArray: parts,
         flashSize: "keep",
         flashMode: "keep",
         flashFreq: "keep",
