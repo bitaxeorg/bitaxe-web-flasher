@@ -21,7 +21,7 @@
         "i18next": "^24.1.0",
         "i18next-browser-languagedetector": "^8.0.2",
         "lucide-react": "^0.263.1",
-        "next": "13.4.12",
+        "next": "14.2.21",
         "next-themes": "^0.3.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
