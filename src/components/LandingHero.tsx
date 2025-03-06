@@ -397,7 +397,7 @@ export default function LandingHero() {
               <Button
                 className="w-full"
                 onClick={handleStartFlashing}
-                disabled={!selectedDevice || !selectedBoardVersion || isConnecting || isFlashing || !isConnected}
+                disabled={!selectedDevice || !selectedBoardVersion || !selectedFirmware || isConnecting || isFlashing || !isConnected}
               >
                 {isFlashing ? t('hero.flashing') : t('hero.startFlashing')}
                 <Zap className="ml-2 h-4 w-4" />
