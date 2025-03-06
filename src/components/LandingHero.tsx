@@ -212,6 +212,11 @@ export default function LandingHero() {
       setStatus(t('status.selectBoth'))
       return
     }
+    
+    if (!selectedFirmware) {
+      setStatus(t('status.selectBoth'))
+      return
+    }
 
     setIsFlashing(true)
     setStatus(t('status.preparing'))
@@ -397,7 +402,7 @@ export default function LandingHero() {
               <Button
                 className="w-full"
                 onClick={handleStartFlashing}
-                disabled={!selectedDevice || !selectedBoardVersion || isConnecting || isFlashing || !isConnected}
+                disabled={!selectedDevice || !selectedBoardVersion || !selectedFirmware || isConnecting || isFlashing || !isConnected}
               >
                 {isFlashing ? t('hero.flashing') : t('hero.startFlashing')}
                 <Zap className="ml-2 h-4 w-4" />
