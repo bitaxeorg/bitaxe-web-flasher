@@ -212,6 +212,11 @@ export default function LandingHero() {
       setStatus(t('status.selectBoth'))
       return
     }
+    
+    if (!selectedFirmware) {
+      setStatus(t('status.selectBoth'))
+      return
+    }
 
     setIsFlashing(true)
     setStatus(t('status.preparing'))
