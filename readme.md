@@ -2,7 +2,7 @@
 
 # Bitaxe Web Flasher
 
-The Bitaxe Web Flasher is the open source tool that provides you an easy solution to flash a factory file to you device.
+The Bitaxe Web Flasher is the open source tool that provides you an easy solution to flash a factory file to your device.
 
 ## Flashing process
 
