@@ -311,8 +311,22 @@ export default function LandingHero() {
       })
 
       setStatus(t('status.completed'))
+      
+      // Hard reset the device
       await loader.hardReset()
-
+      
+      // Disconnect the transport to release the serial port
+      await transport.disconnect()
+      
+      // Close the serial port to complete the disconnection
+      if (serialPortRef.current?.readable) {
+        await serialPortRef.current.close()
+      }
+      
+      // Clear the serial port reference and update connection state
+      serialPortRef.current = null
+      setIsConnected(false)
+      
       setStatus(t('status.success'))
     } catch (error) {
       console.error('Flashing failed:', error)
