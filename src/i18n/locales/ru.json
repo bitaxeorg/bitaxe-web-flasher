@@ -19,6 +19,7 @@
       "selectDevice": "Выбрать аппарат",
       "selectBoard": "Выбрать версию платы",
       "selectFirmware": "Выбрать версию микропрограммы",
+      "loadingFirmware": "Загрузка версий прошивки...",
       "startFlashing": "Начать прошивку",
       "flashing": "Прошивка...",
       "startLogging": "Начать ведение журнала",

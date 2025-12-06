@@ -19,6 +19,7 @@
       "selectDevice": "Select device",
       "selectBoard": "Select board version",
       "selectFirmware": "Select firmware version",
+      "loadingFirmware": "Loading firmware versions...",
       "startFlashing": "Start Flashing",
       "flashing": "Flashing...",
       "startLogging": "Start Logging",

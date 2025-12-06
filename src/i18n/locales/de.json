@@ -19,6 +19,7 @@
       "selectDevice": "Gerät auswählen",
       "selectBoard": "Board-Version auswählen",
       "selectFirmware": "Firmware-Version auswählen",
+      "loadingFirmware": "Lade Firmware-Versionen...",
       "startFlashing": "Flashen starten",
       "flashing": "Flashen...",
       "startLogging": "Logging starten",

@@ -19,6 +19,7 @@
       "selectDevice": "Cihaz seç",
       "selectBoard": "Cihaz versiyonu seç",
       "selectFirmware": "Yazılım versiyonu seç",
+      "loadingFirmware": "Yazılım sürümleri yükleniyor...",
       "startFlashing": "Formatlamaya Başla",
       "flashing": "Formatlanıyor...",
       "startLogging": "Loglamaya Başla",
