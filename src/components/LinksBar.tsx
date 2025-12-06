@@ -15,6 +15,11 @@ export default function LinksBar() {
       retailer: "EU Retailer"
     },
     {
+      region: "Germany",
+      url: "https://dub.sh/NtisWzh", 
+      retailer: "German Retailer"
+    },
+    {
       region: "United Kingdom",
       url: "https://dub.sh/5EXOLfW",
       retailer: "UK Retailer"
