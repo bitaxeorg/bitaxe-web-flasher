@@ -19,6 +19,7 @@
       "selectDevice": "Vybrať zariadenie",
       "selectBoard": "Vybrať verziu dosky",
       "selectFirmware": "Vybrať verziu firmware",
+      "loadingFirmware": "Načítavanie verzií firmware...",
       "startFlashing": "Spustiť Aktualizáciu",
       "flashing": "Aktualizujem...",
       "startLogging": "Spustiť Logovanie",

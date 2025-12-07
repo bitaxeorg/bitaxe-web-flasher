@@ -19,6 +19,7 @@
       "selectDevice": "Selecionar dispositivo",
       "selectBoard": "Selecionar versão da placa",
       "selectFirmware": "Selecionar versão do firmware",
+      "loadingFirmware": "Carregando versões do firmware...",
       "startFlashing": "Iniciar Gravação",
       "flashing": "Gravando...",
       "startLogging": "Iniciar Log",

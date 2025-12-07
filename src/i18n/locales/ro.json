@@ -19,6 +19,7 @@
       "selectDevice": "Selectează dispozitiv",
       "selectBoard": "Selectează versiunea plăcii",
       "selectFirmware": "Selectează versiunea software",
+      "loadingFirmware": "Se încarcă versiunile de firmware...",
       "startFlashing": "Începe programarea",
       "flashing": "Programează...",
       "startLogging": "Pornește logarea",

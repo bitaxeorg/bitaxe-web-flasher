@@ -13,11 +13,22 @@ import device_data from './firmware_data.json'
 import { Terminal } from '@xterm/xterm';
 import '@xterm/xterm/css/xterm.css';
 
+interface FirmwareRelease {
+  version: string;
+  name: string;
+  assets: Array<{
+    name: string;
+    browser_download_url: string;
+  }>;
+}
+
 export default function LandingHero() {
   const { t } = useTranslation();
   const [selectedDevice, setSelectedDevice] = useState<string>('')
   const [selectedBoardVersion, setSelectedBoardVersion] = useState('')
   const [selectedFirmware, setSelectedFirmware] = useState('')
+  const [firmwareOptions, setFirmwareOptions] = useState<FirmwareRelease[]>([]);
+  const [isLoadingFirmware, setIsLoadingFirmware] = useState(false);
   const [status, setStatus] = useState('')
   const [isConnecting, setIsConnecting] = useState(false)
   const [isConnected, setIsConnected] = useState(false)
@@ -67,13 +78,69 @@ export default function LandingHero() {
   const devices = device_data.devices;
   const device = selectedDevice !== ''
     ? devices.find(d => d.name == selectedDevice)!
-    : { boards: [] };
+    : { boards: [], repository: '' };
   const board = selectedBoardVersion !== ''
     ? device.boards.find(b => b.name == selectedBoardVersion)!
-    : { supported_firmware: [] };
-  const firmware = selectedFirmware !== ''
-    ? board.supported_firmware.find(f => f.version == selectedFirmware)!
-    : { path: '' };
+    : { supported_firmware: [] as Array<{ version: string; path: string }>, name: '' };
+  
+  // Get local firmware options (only for devices without GitHub repository)
+  const localFirmwareOptions = board && 'supported_firmware' in board ? board.supported_firmware || [] : [];
+
+  // Fetch releases from GitHub when device and board are selected
+  const fetchReleases = async (repositoryUrl: string, boardName: string): Promise<FirmwareRelease[]> => {
+    try {
+      if (!repositoryUrl) {
+        // Fall back to local firmware files if no repository URL
+        return [];
+      }
+
+      const repoMatch = repositoryUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
+      if (!repoMatch) throw new Error('Invalid repository URL');
+
+      const [, owner, repo] = repoMatch;
+      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases`;
+
+      const response = await fetch(apiUrl);
+      if (!response.ok) throw new Error(`GitHub API returned ${response.status}`);
+
+      const releases = await response.json();
+      const filteredReleases = releases.filter((release: any) => !release.prerelease && !release.draft);
+
+      return filteredReleases.map((release: any) => ({
+        version: release.tag_name,
+        name: release.name,
+        assets: release.assets.filter((asset: any) =>
+          asset.name.startsWith(`esp-miner-factory-${boardName}-${release.tag_name}`)
+        ),
+      })).filter((release: any) => release.assets.length > 0);
+    } catch (error) {
+      console.error('Error fetching releases:', error);
+      return [];
+    }
+  };
+
+  // Effect to fetch firmware options when device and board change
+  useEffect(() => {
+    const updateFirmwareOptions = async () => {
+      if (!selectedDevice || !selectedBoardVersion) {
+        setFirmwareOptions([]);
+        return;
+      }
+
+      const deviceData = device_data.devices.find((d) => d.name === selectedDevice);
+      if (deviceData && deviceData.repository) {
+        setIsLoadingFirmware(true);
+        const firmwareData = await fetchReleases(deviceData.repository, selectedBoardVersion);
+        setFirmwareOptions(firmwareData);
+        setIsLoadingFirmware(false);
+      } else {
+        // Fall back to local firmware data if no repository
+        setFirmwareOptions([]);
+      }
+    };
+
+    updateFirmwareOptions();
+  }, [selectedDevice, selectedBoardVersion]);
 
   const handleConnect = async () => {
     setIsConnecting(true)
@@ -251,16 +318,33 @@ export default function LandingHero() {
 
       await loader.main();
 
-      if (!firmware) {
-        throw new Error('No firmware available for the selected device and board version')
+      let firmwareArrayBuffer: ArrayBuffer;
+
+      // Check if we have GitHub firmware options available
+      const firmwareData = firmwareOptions.find(f => f.version === selectedFirmware);
+      
+      if (firmwareData && firmwareData.assets.length > 0) {
+        // Download from GitHub releases using CORS proxy
+        const proxyUrl = 'https://corsproxy.io/?url=';
+        const firmwareUrl = firmwareData.assets[0].browser_download_url;
+        const firmwareResponse = await fetch(proxyUrl + firmwareUrl);
+        if (!firmwareResponse.ok) {
+          throw new Error('Failed to download firmware from GitHub');
+        }
+        firmwareArrayBuffer = await firmwareResponse.arrayBuffer();
+      } else {
+        // Fall back to local firmware files
+        const localFirmware = localFirmwareOptions.find(f => f.version === selectedFirmware);
+        if (!localFirmware) {
+          throw new Error('No firmware available for the selected device and board version');
+        }
+        const firmwareResponse = await fetch(localFirmware.path);
+        if (!firmwareResponse.ok) {
+          throw new Error('Failed to load firmware file');
+        }
+        firmwareArrayBuffer = await firmwareResponse.arrayBuffer();
       }
 
-      const firmwareResponse = await fetch(firmware.path)
-      if (!firmwareResponse.ok) {
-        throw new Error('Failed to load firmware file')
-      }
-
-      const firmwareArrayBuffer = await firmwareResponse.arrayBuffer()
       const firmwareUint8Array = new Uint8Array(firmwareArrayBuffer)
       const firmwareBinaryString = Array.from(firmwareUint8Array, (byte) => String.fromCharCode(byte)).join('')
 
@@ -395,10 +479,14 @@ export default function LandingHero() {
               )}
               {selectedBoardVersion && (
                 <Selector
-                  placeholder={t('hero.selectFirmware')}
-                  values={board.supported_firmware.map(f => f.version)}
+                  placeholder={isLoadingFirmware ? t('hero.loadingFirmware') : t('hero.selectFirmware')}
+                  values={
+                    firmwareOptions.length > 0
+                      ? firmwareOptions.map(f => f.version)
+                      : localFirmwareOptions.map(f => f.version)
+                  }
                   onValueChange={setSelectedFirmware}
-                  disabled={isConnecting || isFlashing}
+                  disabled={isConnecting || isFlashing || isLoadingFirmware}
                 />
               )}
               <div className="flex items-center gap-2">
