@@ -63,6 +63,7 @@
         "selectBoth": "jan Segh 'ej janHom 'ay' yIwIv",
         "connectFirst": "jan chelpa' Datu'",
         "preparing": "ghItlhqa' tugh...",
+        "downloadFirmware": "Downloading firmware...",
         "flashing": "ghItlhqa': {{percent}}% rIn",
         "completed": "ghItlhqa' rIn. jan taghqa'...",
         "success": "ghItlhqa' chu'! jan taghqa'.",

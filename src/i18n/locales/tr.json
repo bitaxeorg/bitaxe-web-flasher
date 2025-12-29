@@ -1,77 +1,78 @@
 {
-    "common": {
-      "theme": "Tema",
-      "language": "Dil",
-      "dark": "Koyu",
-      "light": "Açık"
+  "common": {
+    "theme": "Tema",
+    "language": "Dil",
+    "dark": "Koyu",
+    "light": "Açık"
+  },
+  "header": {
+    "home": "Ana Sayfa",
+    "features": "Özellikler",
+    "instructions": "Kullanım"
+  },
+  "hero": {
+    "title": "Bitaxe Cihazınızı Tarayıcınızdan Formatlayın",
+    "description": "Cihazını bağla, model ve versiyon seç ve formatlamaya hemen başla. Bilgisayara ek kurulum gerektirmez.",
+    "getStarted": "Başlayın",
+    "connect": "Bağla",
+    "disconnect": "Bağlantıyı Kes",
+    "selectDevice": "Cihaz seç",
+    "selectBoard": "Cihaz versiyonu seç",
+    "selectFirmware": "Yazılım versiyonu seç",
+    "loadingFirmware": "Yazılım sürümleri yükleniyor...",
+    "startFlashing": "Formatlamaya Başla",
+    "flashing": "Formatlanıyor...",
+    "startLogging": "Loglamaya Başla",
+    "stopLogging": "Loglamayı Durdur",
+    "downloadLogs": "Logu İndir",
+    "loggingDescription": "Cihazınızı seçin, işlemi loglayın ve daha sonra indirin.",
+    "keepConfig": "Yapılandırmayı koru"
+  },
+  "features": {
+    "title": "Öne Çıkan Özellikler",
+    "fastFlashing": {
+      "title": "Hızlı Formatlama",
+      "description": "Bitaxe cihazınızı saniyeler içinde formatlayın."
     },
-    "header": {
-      "home": "Ana Sayfa",
-      "features": "Özellikler",
-      "instructions": "Kullanım"
+    "webBased": {
+      "title": "Tarayıcı Tabanlı",
+      "description": "Bilgisayarınıza kurulum gerektirmez, direkt tarayıcınızı kullanın."
     },
-    "hero": {
-      "title": "Bitaxe Cihazınızı Tarayıcınızdan Formatlayın",
-      "description": "Cihazını bağla, model ve versiyon seç ve formatlamaya hemen başla. Bilgisayara ek kurulum gerektirmez.",
-      "getStarted": "Başlayın",
-      "connect": "Bağla",
-      "disconnect": "Bağlantıyı Kes",
-      "selectDevice": "Cihaz seç",
-      "selectBoard": "Cihaz versiyonu seç",
-      "selectFirmware": "Yazılım versiyonu seç",
-      "loadingFirmware": "Yazılım sürümleri yükleniyor...",
-      "startFlashing": "Formatlamaya Başla",
-      "flashing": "Formatlanıyor...",
-      "startLogging": "Loglamaya Başla",
-      "stopLogging": "Loglamayı Durdur",
-      "downloadLogs": "Logu İndir",
-      "loggingDescription": "Cihazınızı seçin, işlemi loglayın ve daha sonra indirin.",
-      "keepConfig": "Yapılandırmayı koru"
+    "multipleBoards": {
+      "title": "Birden Fazla Versiyon Destekli",
+      "description": "Neredeyse tüm Bitaxe donanım ve yazılım versiyonlarını destekler."
+    }
+  },
+  "instructions": {
+    "title": "Nasıl Kullanılır",
+    "steps": {
+      "1": "Bitaxe cihazınızı bilgisayarınıza bağlayın.",
+      "2": "\"Bağla\" butonuna tıklayın ve çıkan menüden Bitaxe cihazınızı seçin.",
+      "3": "Cihaz modelini seçin.",
+      "4": "Cihaz versiyonunu seçin.",
+      "5": "Formatı başlatmak için \"Formatlamaya Başla\" butonuna tıklayın.",
+      "6": "Formatlama işleminin tamamlanmasını bekleyin.",
+      "7": "Bağlantıyı kesin ve cihazınızı baştan başlatın."
     },
-    "features": {
-      "title": "Öne Çıkan Özellikler",
-      "fastFlashing": {
-        "title": "Hızlı Formatlama",
-        "description": "Bitaxe cihazınızı saniyeler içinde formatlayın."
-      },
-      "webBased": {
-        "title": "Tarayıcı Tabanlı",
-        "description": "Bilgisayarınıza kurulum gerektirmez, direkt tarayıcınızı kullanın."
-      },
-      "multipleBoards": {
-        "title": "Birden Fazla Versiyon Destekli",
-        "description": "Neredeyse tüm Bitaxe donanım ve yazılım versiyonlarını destekler."
-      }
-    },
-    "instructions": {
-      "title": "Nasıl Kullanılır",
-      "steps": {
-        "1": "Bitaxe cihazınızı bilgisayarınıza bağlayın.",
-        "2": "\"Bağla\" butonuna tıklayın ve çıkan menüden Bitaxe cihazınızı seçin.",
-        "3": "Cihaz modelini seçin.",
-        "4": "Cihaz versiyonunu seçin.",
-        "5": "Formatı başlatmak için \"Formatlamaya Başla\" butonuna tıklayın.",
-        "6": "Formatlama işleminin tamamlanmasını bekleyin.",
-        "7": "Bağlantıyı kesin ve cihazınızı baştan başlatın."
-      },
-      "moreInfo": "Daha detaylı talimatlara dokümantasyondan ulaşabilirsiniz:",
-      "documentation": "dokümantasyon"
-    },
-    "status": {
-      "connecting": "Cihazınız bağlanıyor...",
-      "connected": "Bağlantı başarılı!",
-      "selectBoth": "Lütfen cihaz modeli ve versiyonunu seçin",
-      "connectFirst": "Lütfen önce cihazınızı bağlayın",
-      "preparing": "Formatlamaya hazırlanıyor...",
-      "flashing": "Formatlanıyor: {{percent}}% tamamlandı",
-      "completed": "Formatlama tamamlandı. Cihaz baştan başlatılıyor...",
-      "success": "Formatlama başarıyla tamamlandı! Cihaz baştan başlatıldı.",
-      "loggingStarted": "Loglama başlatıldı..."
-    },
-    "errors": {
-      "browserCompatibility": {
-        "title": "Tarayıcı Uyumluluk Hatası",
-        "description": "Bu uygulama, Chromium tabanlı tarayıcı (Google Chrome, Microsoft Edge veya Brave gibi) gerektirir. Lütfen uyumlu bir tarayıcı ile tekrar deneyin."
-      }
+    "moreInfo": "Daha detaylı talimatlara dokümantasyondan ulaşabilirsiniz:",
+    "documentation": "dokümantasyon"
+  },
+  "status": {
+    "connecting": "Cihazınız bağlanıyor...",
+    "connected": "Bağlantı başarılı!",
+    "selectBoth": "Lütfen cihaz modeli ve versiyonunu seçin",
+    "connectFirst": "Lütfen önce cihazınızı bağlayın",
+    "preparing": "Formatlamaya hazırlanıyor...",
+    "downloadFirmware": "Downloading firmware...",
+    "flashing": "Formatlanıyor: {{percent}}% tamamlandı",
+    "completed": "Formatlama tamamlandı. Cihaz baştan başlatılıyor...",
+    "success": "Formatlama başarıyla tamamlandı! Cihaz baştan başlatıldı.",
+    "loggingStarted": "Loglama başlatıldı..."
+  },
+  "errors": {
+    "browserCompatibility": {
+      "title": "Tarayıcı Uyumluluk Hatası",
+      "description": "Bu uygulama, Chromium tabanlı tarayıcı (Google Chrome, Microsoft Edge veya Brave gibi) gerektirir. Lütfen uyumlu bir tarayıcı ile tekrar deneyin."
     }
   }
+}

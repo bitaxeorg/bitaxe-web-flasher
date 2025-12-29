@@ -63,6 +63,7 @@
       "selectBoth": "Bitte wähle sowohl Gerätemodell als auch Board-Version aus",
       "connectFirst": "Bitte verbinde zuerst ein Gerät",
       "preparing": "Bereite Flashen vor...",
+      "downloadFirmware": "Firmware wird heruntergeladen...",
       "flashing": "Flashen: {{percent}}% abgeschlossen",
       "completed": "Flashen abgeschlossen. Gerät wird neu gestartet...",
       "success": "Flashen erfolgreich abgeschlossen! Gerät wurde neu gestartet.",

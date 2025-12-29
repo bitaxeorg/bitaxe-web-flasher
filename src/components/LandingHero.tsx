@@ -22,6 +22,55 @@ interface FirmwareRelease {
   }>;
 }
 
+const R2_BASE_URL = 'https://fw.wantclue.de';
+
+const parseGitHubRepo = (repositoryUrl: string) => {
+  const repoMatch = repositoryUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
+  if (!repoMatch) throw new Error('Invalid repository URL');
+  const [, owner, repo] = repoMatch;
+  return { owner, repo };
+};
+
+const fetchGitHubAPI = async (url: string) => {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`GitHub API returned ${response.status}`);
+  return response.json();
+};
+
+const extractSHA256Hash = (releaseBody: string, binaryName: string) => {
+  const lines = (releaseBody || '').split('\n');
+  for (const line of lines) {
+    if (line.includes(binaryName)) {
+      const parts = line.split(/\s+/);
+      if (parts.length > 1 && parts[1] === binaryName) {
+        return parts[0]; // Return the first part as the hash
+      }
+    }
+  }
+  return null;
+};
+
+// Calculate SHA256 hash of downloaded binary
+const calculateSHA256 = async (data: ArrayBuffer) => {
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
+};
+
+// Fetch the SHA256 hash for a specific binary from GitHub release notes
+const fetchSHA256Hash = async (repositoryUrl: string, versionTag: string, binaryName: string) => {
+  try {
+    const { owner, repo } = parseGitHubRepo(repositoryUrl);
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/releases/tags/${versionTag}`;
+    const release = await fetchGitHubAPI(apiUrl);
+    return extractSHA256Hash(release.body, binaryName);
+  } catch (error) {
+    console.error('Error fetching SHA256 hash:', error);
+    return null;
+  }
+};
+
 export default function LandingHero() {
   const { t } = useTranslation();
   const [selectedDevice, setSelectedDevice] = useState<string>('')
@@ -324,14 +373,47 @@ export default function LandingHero() {
       const firmwareData = firmwareOptions.find(f => f.version === selectedFirmware);
       
       if (firmwareData && firmwareData.assets.length > 0) {
-        // Download from GitHub releases using CORS proxy
-        const proxyUrl = 'https://corsproxy.io/?url=';
         const firmwareUrl = firmwareData.assets[0].browser_download_url;
-        const firmwareResponse = await fetch(proxyUrl + firmwareUrl);
-        if (!firmwareResponse.ok) {
-          throw new Error('Failed to download firmware from GitHub');
+        const binaryName = decodeURIComponent(firmwareUrl.split('/').pop()!); // e.g. esp-miner-factory-402-v2.5.0.bin
+        const r2Url = `${R2_BASE_URL}/${selectedFirmware}/${binaryName}`;
+
+        console.log(`Downloading firmware from R2: ${r2Url}`);
+
+        // Fetch SHA256 from GitHub release body for verification
+        const sha256Hash = await fetchSHA256Hash(device.repository, selectedFirmware, binaryName);
+
+        if (sha256Hash) {
+          console.log(`Found SHA256 hash: ${sha256Hash}`);
+        } else {
+          console.warn('No SHA256 hash found');
         }
+
+        setStatus(t('status.downloadFirmware'));
+
+        const firmwareResponse = await fetch(r2Url);
+        if (!firmwareResponse.ok) {
+          throw new Error(`Failed to download firmware from R2 (status ${firmwareResponse.status})`);
+        }
+
         firmwareArrayBuffer = await firmwareResponse.arrayBuffer();
+
+        // Compare the calculated hash with the fetched hash
+        if (sha256Hash) {
+          // Calculate the SHA256 hash of the downloaded binary
+          const calculatedHash = await calculateSHA256(firmwareArrayBuffer);
+          console.log(`Calculated SHA256 hash of downloaded binary: ${calculatedHash}`);
+
+          if (calculatedHash === sha256Hash) {
+            console.log('SHA256 hash verification successful. Binary is valid.');
+          } else {
+            console.error('SHA256 hash verification failed! Binary may be corrupted or tampered with.');
+            throw new Error('Hash verification failed');
+          }
+        } else {
+          // TODO: versions don't have hashes on the release page
+          // in this case we warn silently in the console but accept the risk
+          console.warn("No SHA256 found on the release page!");
+        }
       } else {
         // Fall back to local firmware files
         const localFirmware = localFirmwareOptions.find(f => f.version === selectedFirmware);

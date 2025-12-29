@@ -63,6 +63,7 @@
       "selectBoth": "Please select both device model and board version",
       "connectFirst": "Please connect to a device first",
       "preparing": "Preparing to flash...",
+      "downloadFirmware": "Downloading firmware...",
       "flashing": "Flashing: {{percent}}% complete",
       "completed": "Flashing completed. Restarting device, please wait...",
       "success": "Flashing completed successfully! Device has been restarted.",

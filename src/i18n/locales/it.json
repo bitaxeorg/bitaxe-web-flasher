@@ -63,6 +63,7 @@
         "selectBoth": "Seleziona sia il modello del dispositivo che la versione della scheda",
         "connectFirst": "Collegati prima a un dispositivo",
         "preparing": "Preparazione per il flashing in corso...",
+        "downloadFirmware": "Downloading firmware...",
         "flashing": "Flashing: {{percent}}% completato",
         "completed": "Flashing completato. Riavvio del dispositivo...",
         "success": "Flashing completato con successo! Il dispositivo stato riavviato.",

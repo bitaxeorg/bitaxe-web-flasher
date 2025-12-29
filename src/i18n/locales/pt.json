@@ -1,77 +1,78 @@
 {
-    "common": {
-      "theme": "Tema",
-      "language": "Língua",
-      "dark": "Escuro",
-      "light": "Claro"
+  "common": {
+    "theme": "Tema",
+    "language": "Língua",
+    "dark": "Escuro",
+    "light": "Claro"
+  },
+  "header": {
+    "home": "Home",
+    "features": "Recursos",
+    "instructions": "Instruções"
+  },
+  "hero": {
+    "title": "Grave Seu Bitaxe Diretamente da Web",
+    "description": "Conecte seu dispositivo, selecione seu modelo e versão da placa, e inicie a gravação imediatamente. Nenhuma configuração necessária.",
+    "getStarted": "Começar",
+    "connect": "Conectar",
+    "disconnect": "Desconectar",
+    "selectDevice": "Selecionar dispositivo",
+    "selectBoard": "Selecionar versão da placa",
+    "selectFirmware": "Selecionar versão do firmware",
+    "loadingFirmware": "Carregando versões do firmware...",
+    "startFlashing": "Iniciar Gravação",
+    "flashing": "Gravando...",
+    "startLogging": "Iniciar Log",
+    "stopLogging": "Parar Log",
+    "downloadLogs": "Baixar Logs",
+    "loggingDescription": "Conecte seu dispositivo, registre os dados seriais e baixe-os posteriormente.",
+    "keepConfig": "Manter configuração"
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "fastFlashing": {
+      "title": "Gravação Rápida",
+      "description": "Grave seu Bitaxe em segundos, não minutos."
     },
-    "header": {
-      "home": "Home",
-      "features": "Recursos",
-      "instructions": "Instruções"
+    "webBased": {
+      "title": "Baseado na Web",
+      "description": "Não é necessário software especial. Use seu navegador."
     },
-    "hero": {
-      "title": "Grave Seu Bitaxe Diretamente da Web",
-      "description": "Conecte seu dispositivo, selecione seu modelo e versão da placa, e inicie a gravação imediatamente. Nenhuma configuração necessária.",
-      "getStarted": "Começar",
-      "connect": "Conectar",
-      "disconnect": "Desconectar",
-      "selectDevice": "Selecionar dispositivo",
-      "selectBoard": "Selecionar versão da placa",
-      "selectFirmware": "Selecionar versão do firmware",
-      "loadingFirmware": "Carregando versões do firmware...",
-      "startFlashing": "Iniciar Gravação",
-      "flashing": "Gravando...",
-      "startLogging": "Iniciar Log",
-      "stopLogging": "Parar Log",
-      "downloadLogs": "Baixar Logs",
-      "loggingDescription": "Conecte seu dispositivo, registre os dados seriais e baixe-os posteriormente.",
-      "keepConfig": "Manter configuração"
-    },
-    "features": {
-      "title": "Principais Recursos",
-      "fastFlashing": {
-        "title": "Gravação Rápida",
-        "description": "Grave seu Bitaxe em segundos, não minutos."
-      },
-      "webBased": {
-        "title": "Baseado na Web",
-        "description": "Não é necessário software especial. Use seu navegador."
-      },
-      "multipleBoards": {
-        "title": "Múltiplas Placas",
-        "description": "Suporte para várias placas e módulos Bitaxe."
-      }
-    },
-    "instructions": {
-      "title": "Como Usar",
-      "steps": {
-        "1": "Conecte seu Bitaxe ao computador.",
-        "2": "Clique em \"Conectar Dispositivo\" e selecione seu dispositivo na janela pop-up.",
-        "3": "Selecione o modelo do dispositivo no menu suspenso.",
-        "4": "Escolha a versão apropriada da placa.",
-        "5": "Clique em \"Iniciar Gravação\" para começar o processo.",
-        "6": "Aguarde até o processo de gravação ser concluído.",
-        "7": "Desconecte e reinicie seu dispositivo."
-      },
-      "moreInfo": "Para instruções mais detalhadas, consulte nossa",
-      "documentation": "documentação"
-    },
-    "status": {
-      "connecting": "Conectando ao dispositivo...",
-      "connected": "Conectado com sucesso!",
-      "selectBoth": "Por favor, selecione o modelo do dispositivo e a versão da placa",
-      "connectFirst": "Por favor, conecte-se a um dispositivo primeiro",
-      "preparing": "Preparando para gravar...",
-      "flashing": "Gravando: {{percent}}% concluído",
-      "completed": "Gravação concluída. Reiniciando o dispositivo...",
-      "success": "Gravação concluída com sucesso! O dispositivo foi reiniciado.",
-      "loggingStarted": "Log serial iniciado..."
-    },
-    "errors": {
-      "browserCompatibility": {
-        "title": "Erro de Compatibilidade do Navegador",
-        "description": "Este aplicativo requer um navegador baseado no Chromium (como Google Chrome, Microsoft Edge ou Brave) para funcionar corretamente. Por favor, mude para um navegador compatível e tente novamente."
-      }
+    "multipleBoards": {
+      "title": "Múltiplas Placas",
+      "description": "Suporte para várias placas e módulos Bitaxe."
     }
+  },
+  "instructions": {
+    "title": "Como Usar",
+    "steps": {
+      "1": "Conecte seu Bitaxe ao computador.",
+      "2": "Clique em \"Conectar Dispositivo\" e selecione seu dispositivo na janela pop-up.",
+      "3": "Selecione o modelo do dispositivo no menu suspenso.",
+      "4": "Escolha a versão apropriada da placa.",
+      "5": "Clique em \"Iniciar Gravação\" para começar o processo.",
+      "6": "Aguarde até o processo de gravação ser concluído.",
+      "7": "Desconecte e reinicie seu dispositivo."
+    },
+    "moreInfo": "Para instruções mais detalhadas, consulte nossa",
+    "documentation": "documentação"
+  },
+  "status": {
+    "connecting": "Conectando ao dispositivo...",
+    "connected": "Conectado com sucesso!",
+    "selectBoth": "Por favor, selecione o modelo do dispositivo e a versão da placa",
+    "connectFirst": "Por favor, conecte-se a um dispositivo primeiro",
+    "preparing": "Preparando para gravar...",
+    "downloadFirmware": "Downloading firmware...",
+    "flashing": "Gravando: {{percent}}% concluído",
+    "completed": "Gravação concluída. Reiniciando o dispositivo...",
+    "success": "Gravação concluída com sucesso! O dispositivo foi reiniciado.",
+    "loggingStarted": "Log serial iniciado..."
+  },
+  "errors": {
+    "browserCompatibility": {
+      "title": "Erro de Compatibilidade do Navegador",
+      "description": "Este aplicativo requer um navegador baseado no Chromium (como Google Chrome, Microsoft Edge ou Brave) para funcionar corretamente. Por favor, mude para um navegador compatível e tente novamente."
+    }
+  }
 }

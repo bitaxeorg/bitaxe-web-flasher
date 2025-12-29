@@ -1,77 +1,78 @@
 {
-    "common": {
-      "theme": "Motív",
-      "language": "Jazyk",
-      "dark": "Tmavý",
-      "light": "Svetlý"
+  "common": {
+    "theme": "Motív",
+    "language": "Jazyk",
+    "dark": "Tmavý",
+    "light": "Svetlý"
+  },
+  "header": {
+    "home": "Domov",
+    "features": "Funkcie",
+    "instructions": "Inštrukcie"
+  },
+  "hero": {
+    "title": "Aktualizujte Váš Bitaxe Priamo cez Web",
+    "description": "Pripojte Vaše zariadenie, vyberte model, verziu dosky, a spustite aktualizáciou. Bez potreby konfigurácie.",
+    "getStarted": "Začíname",
+    "connect": "Pripojiť",
+    "disconnect": "Odpojiť",
+    "selectDevice": "Vybrať zariadenie",
+    "selectBoard": "Vybrať verziu dosky",
+    "selectFirmware": "Vybrať verziu firmware",
+    "loadingFirmware": "Načítavanie verzií firmware...",
+    "startFlashing": "Spustiť Aktualizáciu",
+    "flashing": "Aktualizujem...",
+    "startLogging": "Spustiť Logovanie",
+    "stopLogging": "Ukončiť Logovanie",
+    "downloadLogs": "Stiahniť Logy",
+    "loggingDescription": "Pripojte Vaše zariadenie, uložte serialové dáta a stiahnite ich neskôr.",
+    "keepConfig": "Zachovať konfiguráciu"
+  },
+  "features": {
+    "title": "Kľučové Funkcie",
+    "fastFlashing": {
+      "title": "Rýchla Aktualizácia",
+      "description": "Aktualizujte Váš Bitaxe behom niekoľkých sekúd, nie minút."
     },
-    "header": {
-      "home": "Domov",
-      "features": "Funkcie",
-      "instructions": "Inštrukcie"
+    "webBased": {
+      "title": "Webový",
+      "description": "Bez akéhokoľvek softvéru. Použite Vás webový prehliadač."
     },
-    "hero": {
-      "title": "Aktualizujte Váš Bitaxe Priamo cez Web",
-      "description": "Pripojte Vaše zariadenie, vyberte model, verziu dosky, a spustite aktualizáciou. Bez potreby konfigurácie.",
-      "getStarted": "Začíname",
-      "connect": "Pripojiť",
-      "disconnect": "Odpojiť",
-      "selectDevice": "Vybrať zariadenie",
-      "selectBoard": "Vybrať verziu dosky",
-      "selectFirmware": "Vybrať verziu firmware",
-      "loadingFirmware": "Načítavanie verzií firmware...",
-      "startFlashing": "Spustiť Aktualizáciu",
-      "flashing": "Aktualizujem...",
-      "startLogging": "Spustiť Logovanie",
-      "stopLogging": "Ukončiť Logovanie",
-      "downloadLogs": "Stiahniť Logy",
-      "loggingDescription": "Pripojte Vaše zariadenie, uložte serialové dáta a stiahnite ich neskôr.",
-      "keepConfig": "Zachovať konfiguráciu"
+    "multipleBoards": {
+      "title": "Viaceré dosky",
+      "description": "Podporuje viaceré dosky a moduly Bitaxe."
+    }
+  },
+  "instructions": {
+    "title": "Návod na použitie",
+    "steps": {
+      "1": "Pripojte Vás Bitaxe k počítaču.",
+      "2": "Kliknite na  \"Pripojiť zariadenie\" a vyberte Vaše zariadenie zo zoznamu.",
+      "3": "Vyberte model Vášho zariadenia z možností.",
+      "4": "Vyberte vhodnu verziu dosky.",
+      "5": "Kliknite na \"Spustiť Aktualizáciu\" to begin the process.",
+      "6": "Počkajte na dokončenie procesu aktualizácie. Wait for the flashing process to complete.",
+      "7": "Odpojte a resetujte Vaše zariadenie.."
     },
-    "features": {
-      "title": "Kľučové Funkcie",
-      "fastFlashing": {
-        "title": "Rýchla Aktualizácia",
-        "description": "Aktualizujte Váš Bitaxe behom niekoľkých sekúd, nie minút."
-      },
-      "webBased": {
-        "title": "Webový",
-        "description": "Bez akéhokoľvek softvéru. Použite Vás webový prehliadač."
-      },
-      "multipleBoards": {
-        "title": "Viaceré dosky",
-        "description": "Podporuje viaceré dosky a moduly Bitaxe."
-      }
-    },
-    "instructions": {
-      "title": "Návod na použitie",
-      "steps": {
-        "1": "Pripojte Vás Bitaxe k počítaču.",
-        "2": "Kliknite na  \"Pripojiť zariadenie\" a vyberte Vaše zariadenie zo zoznamu.",
-        "3": "Vyberte model Vášho zariadenia z možností.",
-        "4": "Vyberte vhodnu verziu dosky.",
-        "5": "Kliknite na \"Spustiť Aktualizáciu\" to begin the process.",
-        "6": "Počkajte na dokončenie procesu aktualizácie. Wait for the flashing process to complete.",
-        "7": "Odpojte a resetujte Vaše zariadenie.."
-      },
-      "moreInfo": "Pre detailnejšie inštrukcie, pokračujte na našu",
-      "documentation": "dokumentáciu"
-    },
-    "status": {
-      "connecting": "Pripájanie zariadenia...",
-      "connected": "Pripojenie úspesné!",
-      "selectBoth": "Prosím, vyberte Vaše zariadenie a verziu dosky",
-      "connectFirst": "Prosím, pripojte najprv Vaše zariadenie",
-      "preparing": "Príprava aktualizácie...",
-      "flashing": "Aktualizujem: {{percent}}% dokončené",
-      "completed": "Aktualizácia ukončená. Reštartujte Vaše zariadenie...",
-      "success": "Aktualizácia úspešne ukončená! Zariadenie bolo reštartované.",
-      "loggingStarted": "Seriálove logovanie bolo spustené..."
-    },
-    "errors": {
-      "browserCompatibility": {
-        "title": "Chyba kompatibility prehliadača",
-        "description": "Táto aplikácia vyžaduje prehliadač založený na technológií Chromium (napríklad Google Chrome, Microsoft Edge alebo Brave) pre správne fungovanie. Prosím, prejdite na kompatibilný prehliadač a skúste to znova."
-      }
+    "moreInfo": "Pre detailnejšie inštrukcie, pokračujte na našu",
+    "documentation": "dokumentáciu"
+  },
+  "status": {
+    "connecting": "Pripájanie zariadenia...",
+    "connected": "Pripojenie úspesné!",
+    "selectBoth": "Prosím, vyberte Vaše zariadenie a verziu dosky",
+    "connectFirst": "Prosím, pripojte najprv Vaše zariadenie",
+    "preparing": "Príprava aktualizácie...",
+    "downloadFirmware": "Downloading firmware...",
+    "flashing": "Aktualizujem: {{percent}}% dokončené",
+    "completed": "Aktualizácia ukončená. Reštartujte Vaše zariadenie...",
+    "success": "Aktualizácia úspešne ukončená! Zariadenie bolo reštartované.",
+    "loggingStarted": "Seriálove logovanie bolo spustené..."
+  },
+  "errors": {
+    "browserCompatibility": {
+      "title": "Chyba kompatibility prehliadača",
+      "description": "Táto aplikácia vyžaduje prehliadač založený na technológií Chromium (napríklad Google Chrome, Microsoft Edge alebo Brave) pre správne fungovanie. Prosím, prejdite na kompatibilný prehliadač a skúste to znova."
     }
   }
+}
