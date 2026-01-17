@@ -85,6 +85,15 @@
             ]
         },
         {
+            "name": "Gamma Turbo",
+            "repository": "https://github.com/bitaxeorg/ESP-Miner",
+            "boards": [
+                {
+                    "name": "801"
+                }
+            ]
+        },
+        {
             "name": "NerdMiner",
             "repository": "",
             "boards": [
