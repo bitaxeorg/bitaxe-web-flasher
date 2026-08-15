@@ -25,6 +25,11 @@ export default function LinksBar() {
       retailer: "UK Retailer"
     },
     {
+      region: "Sweden",
+      url: "https://dub.sh/UFR3arU",
+      retailer: "Sweden Retailer"
+    },
+    {
       region: "Global",
       url: "https://dub.sh/HoGhuGr",
       retailer: "Global Store"
