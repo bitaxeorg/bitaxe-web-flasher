@@ -103,6 +103,15 @@
             ]
         },
         {
+            "name": "Naja Duo",
+            "repository": "https://github.com/bitaxeorg/ESP-Miner",
+            "boards": [
+                {
+                    "name": "1201"
+                }
+            ]
+        },
+        {
             "name": "NerdMiner",
             "repository": "",
             "boards": [
