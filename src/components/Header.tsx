@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { Cpu } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from './ThemeToggle'
 import LanguageSelector from './LanguageSelector'
+import { basePath } from '@/lib/utils'
 
 interface HeaderProps {
   onOpenPanel: () => void;
@@ -15,8 +15,8 @@ export default function Header({ onOpenPanel }: HeaderProps) {
     <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
       {/* Left section */}
       <Link className="flex items-center justify-center" href="#">
-        <Cpu className="h-6 w-6 mr-2" />
-        <span className="font-bold">Bitaxe Web Flasher</span>
+        <img src={`${basePath}/pictures/bitaxe-logo.svg`} alt="Bitaxe" className="h-6 w-auto mr-2 invert dark:invert-0" />
+        <span className="font-bold">Web Flasher</span>
       </Link>
 
       {/* Middle section */}
