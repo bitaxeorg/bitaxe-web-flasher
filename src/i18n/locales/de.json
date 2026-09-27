@@ -17,6 +17,8 @@
       "connect": "Verbinden",
       "disconnect": "Trennen",
       "selectDevice": "Gerät auswählen",
+      "selectModel": "Modell auswählen",
+      "modelCount": "{{count}} Modelle",
       "selectBoard": "Board-Version auswählen",
       "selectFirmware": "Firmware-Version auswählen",
       "loadingFirmware": "Lade Firmware-Versionen...",

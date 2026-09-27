@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next'
 import Header from './Header'
 import InstructionPanel from './InstructionPanel'
 import Selector from './Selector'
+import DeviceGrid, { BoardPicker } from './DeviceGrid'
 import device_data from './firmware_data.json'
 
 import { Terminal } from '@xterm/xterm';
@@ -23,6 +24,12 @@ interface FirmwareRelease {
 }
 
 const R2_BASE_URL = 'https://fw.wantclue.de';
+
+// Devices can override this in firmware_data.json via "factory_asset"
+const DEFAULT_FACTORY_ASSET = 'esp-miner-factory-{board}-{version}';
+
+// Only the newest stable versions are offered; R2 must keep at least this many per board
+const MAX_FIRMWARE_VERSIONS = 5;
 
 const parseGitHubRepo = (repositoryUrl: string) => {
   const repoMatch = repositoryUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
@@ -136,7 +143,7 @@ export default function LandingHero() {
   const localFirmwareOptions = board && 'supported_firmware' in board ? board.supported_firmware || [] : [];
 
   // Fetch releases from GitHub when device and board are selected
-  const fetchReleases = async (repositoryUrl: string, boardName: string): Promise<FirmwareRelease[]> => {
+  const fetchReleases = async (repositoryUrl: string, boardName: string, factoryAsset = DEFAULT_FACTORY_ASSET): Promise<FirmwareRelease[]> => {
     try {
       if (!repositoryUrl) {
         // Fall back to local firmware files if no repository URL
@@ -159,9 +166,11 @@ export default function LandingHero() {
         version: release.tag_name,
         name: release.name,
         assets: release.assets.filter((asset: any) =>
-          asset.name.startsWith(`esp-miner-factory-${boardName}-${release.tag_name}`)
+          asset.name.startsWith(
+            factoryAsset.replace('{board}', boardName).replace('{version}', release.tag_name)
+          )
         ),
-      })).filter((release: any) => release.assets.length > 0);
+      })).filter((release: any) => release.assets.length > 0).slice(0, MAX_FIRMWARE_VERSIONS);
     } catch (error) {
       console.error('Error fetching releases:', error);
       return [];
@@ -179,12 +188,15 @@ export default function LandingHero() {
       const deviceData = device_data.devices.find((d) => d.name === selectedDevice);
       if (deviceData && deviceData.repository) {
         setIsLoadingFirmware(true);
-        const firmwareData = await fetchReleases(deviceData.repository, selectedBoardVersion);
+        const { factory_asset } = deviceData as { factory_asset?: string };
+        const firmwareData = await fetchReleases(deviceData.repository, selectedBoardVersion, factory_asset);
         setFirmwareOptions(firmwareData);
+        setSelectedFirmware(firmwareData[0]?.version ?? '');
         setIsLoadingFirmware(false);
       } else {
         // Fall back to local firmware data if no repository
         setFirmwareOptions([]);
+        setSelectedFirmware(localFirmwareOptions[0]?.version ?? '');
       }
     };
 
@@ -542,38 +554,42 @@ export default function LandingHero() {
                 {t('hero.description')}
               </p>
             </div>
-            <div className="w-full max-w-sm space-y-2">
-              <Button
-                className="w-full"
-                onClick={isConnected ? handleDisconnect : handleConnect}
-                disabled={isConnecting || isFlashing}
-              >
-                {isConnected ? t('hero.disconnect') : t('hero.connect')}
-                <Usb className="ml-2 h-4 w-4" />
-              </Button>
-              <Selector
-                placeholder={t('hero.selectDevice')}
-                values={devices.map(d => d.name)}
-                onValueChange={(value) => {
-                  setSelectedDevice(value)
-                  setSelectedBoardVersion('')
+            <div className="w-full max-w-2xl space-y-4 pt-4">
+              <DeviceGrid
+                devices={devices}
+                families={device_data.families}
+                selected={selectedDevice}
+                labels={{
+                  selectDevice: t('hero.selectDevice'),
+                  selectModel: t('hero.selectModel'),
+                  models: (count) => t('hero.modelCount', { count }),
+                }}
+                onSelect={(name) => {
+                  const boards = devices.find(d => d.name === name)?.boards ?? []
+                  setSelectedDevice(name)
+                  // Skip the board step when there is only one choice
+                  setSelectedBoardVersion(boards.length === 1 ? boards[0].name : '')
                   setSelectedFirmware('')
                 }}
-                disabled={isConnecting || isFlashing || !isConnected}
+                disabled={isConnecting || isFlashing}
               />
-              {selectedDevice && (
-                <Selector
-                  placeholder={t('hero.selectBoard')}
-                  values={device.boards.map(b => b.name)}
-                  onValueChange={(value) => {
+              {selectedDevice && device.boards.length > 1 && (
+                <BoardPicker
+                  label={t('hero.selectBoard')}
+                  boards={device.boards.map(b => b.name)}
+                  selected={selectedBoardVersion}
+                  onSelect={(value) => {
                     setSelectedBoardVersion(value)
                     setSelectedFirmware('')
                   }}
                   disabled={isConnecting || isFlashing}
                 />
               )}
+            </div>
+            <div className="w-full max-w-sm space-y-2">
               {selectedBoardVersion && (
                 <Selector
+                  value={selectedFirmware}
                   placeholder={isLoadingFirmware ? t('hero.loadingFirmware') : t('hero.selectFirmware')}
                   values={
                     firmwareOptions.length > 0
@@ -584,6 +600,14 @@ export default function LandingHero() {
                   disabled={isConnecting || isFlashing || isLoadingFirmware}
                 />
               )}
+              <Button
+                className="w-full"
+                onClick={isConnected ? handleDisconnect : handleConnect}
+                disabled={isConnecting || isFlashing}
+              >
+                {isConnected ? t('hero.disconnect') : t('hero.connect')}
+                <Usb className="ml-2 h-4 w-4" />
+              </Button>
               <div className="flex items-center gap-2">
                 <input
                   type="checkbox"

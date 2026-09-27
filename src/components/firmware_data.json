@@ -1,7 +1,16 @@
 {
+    "families": [
+        {
+            "name": "Bitaxe",
+            "image": "pictures/bitaxe.png"
+        }
+    ],
     "devices": [
         {
             "name": "Max",
+            "family": "Bitaxe",
+            "asic": "BM1397",
+            "asic_count": 1,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -11,6 +20,9 @@
         },
         {
             "name": "Ultra",
+            "family": "Bitaxe",
+            "asic": "BM1366",
+            "asic_count": 1,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -35,6 +47,9 @@
         },
         {
             "name": "Supra",
+            "family": "Bitaxe",
+            "asic": "BM1368",
+            "asic_count": 1,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -50,6 +65,9 @@
         },
         {
             "name": "Gamma",
+            "family": "Bitaxe",
+            "asic": "BM1370",
+            "asic_count": 1,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -62,6 +80,9 @@
         },
         {
             "name": "Gamma Duo",
+            "family": "Bitaxe",
+            "asic": "BM1370",
+            "asic_count": 2,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -71,6 +92,9 @@
         },
         {
             "name": "UltraHex",
+            "family": "Bitaxe",
+            "asic": "BM1366",
+            "asic_count": 6,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -83,6 +107,9 @@
         },
         {
             "name": "SupraHex",
+            "family": "Bitaxe",
+            "asic": "BM1368",
+            "asic_count": 6,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -95,6 +122,9 @@
         },
         {
             "name": "Gamma Turbo",
+            "family": "Bitaxe",
+            "asic": "BM1370",
+            "asic_count": 2,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -104,6 +134,9 @@
         },
         {
             "name": "Naja Duo",
+            "family": "Bitaxe",
+            "asic": "BM1373",
+            "asic_count": 2,
             "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
@@ -112,22 +145,20 @@
             ]
         },
         {
-            "name": "NerdMiner",
-            "repository": "",
+            "name": "GammaHex",
+            "family": "Bitaxe",
+            "asic": "BM1370",
+            "asic_count": 6,
+            "repository": "https://github.com/bitaxeorg/ESP-Miner",
             "boards": [
                 {
-                    "name": "100",
-                    "supported_firmware": [
-                        {
-                            "version": "1.0.0",
-                            "path": "firmware/merged-flash-nerdminer.bin"
-                        }
-                    ]
+                    "name": "1300"
                 }
             ]
         },
         {
             "name": "NerdNOS",
+            "image": "pictures/nerdnos.webp",
             "repository": "",
             "boards": [
                 {
@@ -143,16 +174,14 @@
         },
         {
             "name": "Bitforge Nano",
-            "repository": "",
+            "image": "pictures/bitforge-nano.webp",
+            "asic": "BM1370",
+            "asic_count": 2,
+            "repository": "https://github.com/WantClue/forge-os/",
+            "factory_asset": "bitforgeos-factory-{board}-{version}.bin",
             "boards": [
                 {
-                    "name": "800",
-                    "supported_firmware": [
-                        {
-                            "version": "1.4",
-                            "path": "firmware/esp-miner-factory-Nano-v1.4.bin"
-                        }
-                    ]
+                    "name": "Nano"
                 }
             ]
         }

@@ -17,6 +17,8 @@
       "connect": "Connect",
       "disconnect": "Disconnect",
       "selectDevice": "Select device",
+      "selectModel": "Select model",
+      "modelCount": "{{count}} models",
       "selectBoard": "Select board version",
       "selectFirmware": "Select firmware version",
       "loadingFirmware": "Loading firmware versions...",

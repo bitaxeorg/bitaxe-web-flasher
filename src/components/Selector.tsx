@@ -5,11 +5,12 @@ type SelectorProps = {
   disabled?: boolean;
   values?: string[];
   placeholder?: string;
+  value?: string;
 }
 
-export default function BoardVersionSelector({ onValueChange, disabled, placeholder = '', values = [] }: SelectorProps) {
+export default function BoardVersionSelector({ onValueChange, disabled, placeholder = '', values = [], value }: SelectorProps) {
   return (
-    <Select onValueChange={onValueChange} disabled={disabled}>
+    <Select value={value} onValueChange={onValueChange} disabled={disabled}>
       <SelectTrigger>
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>

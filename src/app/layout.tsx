@@ -3,10 +3,9 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ClientThemeWrapper } from '../components/ClientThemeWrapper'
 import { I18nProvider } from '../components/I18nProvider'
+import { basePath } from '../lib/utils'
 
 const inter = Inter({ subsets: ['latin'] })
-
-const basePath = process.env.NODE_ENV === 'production' ? '/bitaxe-web-flasher' : ''
 
 export const metadata: Metadata = {
   title: 'Bitaxe Web Flasher',
