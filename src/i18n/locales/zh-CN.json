@@ -1,0 +1,78 @@
+{
+    "common": {
+      "theme": "主题",
+      "language": "语言",
+      "dark": "深色",
+      "light": "浅色"
+    },
+    "header": {
+      "home": "首页",
+      "features": "功能特性",
+      "instructions": "使用说明"
+    },
+    "hero": {
+      "title": "直接在浏览器中刷写你的 Bitaxe",
+      "description": "连接设备，选择型号和板卡版本，立即开始刷写。无需任何配置。",
+      "getStarted": "开始使用",
+      "connect": "连接",
+      "disconnect": "断开连接",
+      "selectDevice": "选择设备",
+      "selectBoard": "选择板卡版本",
+      "selectFirmware": "选择固件版本",
+      "loadingFirmware": "正在加载固件版本...",
+      "startFlashing": "开始刷写",
+      "flashing": "刷写中...",
+      "startLogging": "开始记录日志",
+      "stopLogging": "停止记录日志",
+      "downloadLogs": "下载日志",
+      "loggingDescription": "连接设备，记录串口数据并稍后下载。",
+      "keepConfig": "保留配置"
+    },
+    "features": {
+      "title": "主要特性",
+      "fastFlashing": {
+        "title": "快速刷写",
+        "description": "在数秒内完成 Bitaxe 的刷写，而非数分钟。"
+      },
+      "webBased": {
+        "title": "基于 Web",
+        "description": "无需安装特殊软件，直接使用浏览器即可。"
+      },
+      "multipleBoards": {
+        "title": "多板卡支持",
+        "description": "支持多种 Bitaxe 板卡和模块。"
+      }
+    },
+    "instructions": {
+      "title": "使用方法",
+      "steps": {
+        "1": "将你的 Bitaxe 连接到电脑。",
+        "2": "点击「连接设备」，在弹出窗口中选择你的设备。",
+        "3": "在下拉菜单中选择设备型号。",
+        "4": "选择对应的板卡版本。",
+        "5": "点击「开始刷写」以启动刷写流程。",
+        "6": "等待刷写过程完成。",
+        "7": "断开连接并重启设备。"
+      },
+      "moreInfo": "如需更详细的说明，请参阅我们的",
+      "documentation": "文档"
+    },
+    "status": {
+      "connecting": "正在连接设备...",
+      "connected": "连接成功！",
+      "selectBoth": "请同时选择设备型号和板卡版本",
+      "connectFirst": "请先连接设备",
+      "preparing": "正在准备刷写...",
+      "downloadFirmware": "正在下载固件...",
+      "flashing": "刷写中：{{percent}}% 完成",
+      "completed": "刷写完成，正在重启设备，请稍候...",
+      "success": "刷写成功！设备已重启。",
+      "loggingStarted": "串口日志记录已启动..."
+    },
+    "errors": {
+      "browserCompatibility": {
+        "title": "浏览器兼容性错误",
+        "description": "此应用需要基于 Chromium 的浏览器（如 Google Chrome、Microsoft Edge 或 Brave）才能正常运行。请切换至兼容的浏览器后重试。"
+      }
+    }
+  }
